@@ -1,190 +1,251 @@
-﻿namespace session_5
+﻿using System;
+
+namespace session_5
 {
     internal class Program
     {
 
-        #region weekday
-        enum Weekday
-        {
-
-            Monday,
-            Tuesday,
-            Wednesday,
-            Thursday,
-            Friday,
-            Saturday,
-            sunday
-        }
-        #endregion
-
-        #region seasonmonth
-
-        
-        [Flags]
-        enum seasonsmonth{
-
-            
-            January = 1,       
-            February = 2,      
-            March = 4,         
-            April = 8,         
-            May = 16,          
-            June = 32,         
-            July = 64,         
-            August = 128,      
-            September = 256,   
-            October = 512,     
-            November = 1024,   
-            December = 2048
-
-
-
-        }
-        #endregion
-
-        #region premission
-        [Flags]
-        enum premission
-        {
-            read=1,
-            write=2,
-            delete=4,
-            execute=8
-        }
-
-        #endregion
-        #region colors
-        enum Colors
-        {
-            red,green, blue
-
-        }
-        #endregion
-
+       
         static void Main(string[] args)
         {
 
-            #region q1
+
+            #region v1
+
+            // boxing and unboxing 
+            // boxing : casting fro valuetype to reference
+            //unboxing: casting from referenct to value
+
+            object o1;
+            o1 = 3;
+            o1=1.5;
+            o1='a';
+            o1 = true;
+
+            int x = 5;
+             o1 =/*(object)*/ x;
+            // implicit casting
+            //parent = child =>child is parent
+
+
+
+
+            #endregion
+
+            #region V2
+            //int x = 500;
+            //x = null; // Invalid
+
+            //Nullable<int> y = 500;
+            //int? y = 500;
+            //y = null;
+
+            //Console.WriteLine(y.HasValue);
+            //Console.WriteLine(y.Value); 
+
+
+
+            //int x = 10;
+            //int? y = x; // Valid, Implicit Casting[Safe]
+
+            //int? y = 10;
+            //y = null;
+            //int x = (int)y; // Explicit Casting
+            //int x;
+
+            //if(y is not null)
+            //{
+            //    x = y.Value;
+            //    //x = (int)y;
+            //}
+            //else
+            //{
+            //    x = 0;
+            //}
+
+            //if (y.HasValue)
+            //{
+            //    x = y.Value;
+            //    //x = (int)y;
+            //}
+            //else
+            //{
+            //    x = 0;
+            //}
+
+            //condition ? true : false 
+            //x = y.HasValue ? y.Value : 0;
+
+            //x = y.GetValueOrDefault(); 
+            #endregion
+            #region V3
+
+
+            //string s = "Hello world";
+
+            //string s = null;
+
+            //Console.WriteLine(s); 
+
+
+            #endregion
+
+            #region V4
+            //region Null Operators
+            //Console.Write("Enter Your Name: ");
+            //string name = Console.ReadLine() ?? "No Name";
+
+            //Console.WriteLine(name);
+
+            //int[] numbers = { 1, 2, 3, 4, 5, 6, 7 };
+            //numbers = null!;
+            //numbers = null;
+            //if(numbers is not null)
+            //{
+            //    for (int i = 0; i < numbers.Length; i++)
+            //    {
+            //        Console.WriteLine(numbers[i]);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine(":(");
+            //}
+
+            //for (int i = 0; i < numbers?.Length; i++)
+            //{
+            //    Console.WriteLine(numbers[i]);
+            //} 
+            #endregion
+
+            #region V5
+            // What You Can write Inside?
+            // 1. Class
+            // 2. Struct
+            // 3. Interface
+            // 4. Enum
+
+            // Access Modifier Allowed Inside?
+            // 1. Internal [Default]
+            // 2. Public
+
+            //Class Library
+            //Product p1 = new Product();
+            //p1.Id = 1;
+            //p1.Name = "Tea";
+
+            //Console.WriteLine(p1.ToString()); 
+
+
+            // Access Modifiers [Private, Internal, Public]
+            //TypeA a = new TypeA();
+
+            //Console.WriteLine(a.x);
+            //Console.WriteLine(a.y);
+            //Console.WriteLine(a.z);
+
+
+            //a.MethodA(); 
+            //access modifiers inside the namespace;
+            // 1. internal:inside thte same project
+            //2. public: everywhere
+
+
             /*
-            
-            Create an enum called "WeekDays" with the days of the week 
-            (Monday to Sunday) as its members. Then, write a C# program that prints
-            out all the days of the week using this enum
+              access modiferes inside the class
+            1- private
+            2- private protected
+            3- protected
+            4- internal 
+            5- internal protected
+            6- public
+
+            access inside the struct
+            1 private 
+            2 internal 
+            public
               
-
-           
-
-            for(int i = 0; i < 7;i++)
-            {
-                Weekday w = (Weekday)i;
-                Console.WriteLine(w);
-            }*/
-            #endregion
-
-            /*
-            #region q2
-            
-              //Create an enum called "Season" with the four seasons (Spring, Summer, Autumn, Winter) 
-                //as its members. Write a C# program that takes a
-                //season name as input from the user and displays the corresponding month range for that
-                //season. Note range for seasons ( spring march to may ,
-                //summer june to august , autumn September to November , winter December to February)
-            
-
-            seasonsmonth spring = seasonsmonth.March;
-            spring |= seasonsmonth.April;
-            spring |= seasonsmonth.May;
-
-
-            seasonsmonth summer = seasonsmonth.June;
-            summer |= seasonsmonth.July;
-            summer |= seasonsmonth.August;
-            
-
-            seasonsmonth winter = seasonsmonth.December;
-            winter |= seasonsmonth.January;
-            winter |= seasonsmonth.February;
-
-            seasonsmonth autumn = seasonsmonth.September;
-            autumn |= seasonsmonth.October;
-            autumn |= seasonsmonth.November;
-
-            string season=Console.ReadLine();
-            if (season == "summer")
-            {
-                Console.WriteLine(summer);
-            }
-            else if (season == "spring")
-            {
-                Console.WriteLine(spring);
-            }
-            else if (season == "autumn")
-            {
-                Console.WriteLine(autumn);
-            }
-            else if (season == "winter")
-            {
-                Console.WriteLine(winter);
-            }
-
+              
+              
+              
+             */
 
 
             #endregion
+            #region V6
 
-            */
+            //Person P1 = new Person();
 
-            /* #region q3
+            //P1.Gender = 0;
+            //P1.Gender = Gender.Male;//int => 4 Byte
+            ////int => 4 Byte
 
-               //4- Assign the following Permissions (Read, write, Delete, Execute) in a
-               //   form of Enum.
-               //     Create Variable from previous Enum to Add and Remove Permission from variable
-               //     , check if specific Permission is existed inside variable
+            //Console.WriteLine(P1.Gender);
+
+            ////Grades Grade = Grades.A;//default 
+
+            //P1.Branch = Branches.Dokki;
+
+            //Console.WriteLine(P1.Branch);
+
+            //if(Grade == Grades.A)
+            //{
+            //    Console.WriteLine(":) ");
+            //}
+            //else
+            //{
+            //    Console.WriteLine(":( ");
+
+            //}
+
+            //#endregion
+
+            //#region Validation Inputs Enum
+
+            //Person P1 = new Person();
+
+            //bool flag;
+
+            //do
+            //{
+            //    Console.Write("Please Enter the Id of Employee: ");
+            //    flag = int.TryParse(Console.ReadLine(), out P1.Id);
+            //} while (!flag);
+
+            //do
+            //{
+            //    Console.Write("Please Enter the Name of Employee: ");
+
+            //    P1.Name = Console.ReadLine();
+            //} while (P1.Name is null || P1.Name == "");
 
 
-             premission prem = premission.read;
+            //do
+            //{
+            //    Console.Write("Please Enter the Gender of Employee: ");
 
-             prem |= premission.write;
-             Console.WriteLine(prem);
+            //    flag = Enum.TryParse(Console.ReadLine(), out P1.Gender);
+            //} while (!flag);
 
-             prem&=premission.write;
-             Console.WriteLine(prem);
+            //do
+            //{
+            //    Console.Write("Please Enter the Branch of Employee: ");
 
+            //    flag = Enum.TryParse(Console.ReadLine(), out P1.Branch);
+            //} while (!flag);
 
-             if (prem.HasFlag(premission.read))
-             { Console.WriteLine("read in inside"); }
-             else { Console.WriteLine("read isn't there");};
+            //Console.Clear();
 
-             #endregion*/
+            //Console.WriteLine(P1.Id);
+            //Console.WriteLine(P1.Name);
+            //Console.WriteLine(P1.Gender);
+            //Console.WriteLine(P1.Branch);
 
-            #region q5
-            //5.Create an enum called "Colors" with the basic colors(Red, Green, Blue) as
-            //its members.Write a C# program that takes a color name as input from the
-            //user and displays a message indicating whether the input color is a
-            //primary color or not.
-
-            Colors firstcolor= Colors.red;
-            Colors seccolor= Colors.blue;
-            Colors thirdcolor= Colors.green;
-
-            string color=Console.ReadLine();
-
-            if (color=="red"||color=="blue" || color == "green")
-            {
-                Console.WriteLine("this is primary key");
-            }
-            else { Console.WriteLine("color is not from primary color");};
 
             #endregion
-
-
-
-
-
-
-
 
 
 
         }
-}
+    }
 }

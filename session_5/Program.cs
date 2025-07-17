@@ -29,6 +29,54 @@
 
 
             #endregion
+            
+            #region V2
+            //int x = 500;
+            //x = null; // Invalid
+
+            //Nullable<int> y = 500;
+            //int? y = 500;
+            //y = null;
+
+            //Console.WriteLine(y.HasValue);
+            //Console.WriteLine(y.Value); 
+            
+
+            
+            //int x = 10;
+            //int? y = x; // Valid, Implicit Casting[Safe]
+
+            //int? y = 10;
+            //y = null;
+            //int x = (int)y; // Explicit Casting
+            //int x;
+
+            //if(y is not null)
+            //{
+            //    x = y.Value;
+            //    //x = (int)y;
+            //}
+            //else
+            //{
+            //    x = 0;
+            //}
+
+            //if (y.HasValue)
+            //{
+            //    x = y.Value;
+            //    //x = (int)y;
+            //}
+            //else
+            //{
+            //    x = 0;
+            //}
+
+            //condition ? true : false 
+            //x = y.HasValue ? y.Value : 0;
+
+            //x = y.GetValueOrDefault(); 
+            #endregion
+            
 
 
 

@@ -90,8 +90,8 @@
 
             #region V4
             //region Null Operators
-             //Console.Write("Enter Your Name: ");
-             //string name = Console.ReadLine() ?? "No Name";
+            //Console.Write("Enter Your Name: ");
+            //string name = Console.ReadLine() ?? "No Name";
 
             //Console.WriteLine(name);
 
@@ -114,12 +114,62 @@
             //{
             //    Console.WriteLine(numbers[i]);
             //} 
-            
+            #endregion
+
+            #region V5
+            // What You Can write Inside?
+            // 1. Class
+            // 2. Struct
+            // 3. Interface
+            // 4. Enum
+
+            // Access Modifier Allowed Inside?
+            // 1. Internal [Default]
+            // 2. Public
+
+            //Class Library
+            //Product p1 = new Product();
+            //p1.Id = 1;
+            //p1.Name = "Tea";
+
+            //Console.WriteLine(p1.ToString()); 
+           
+
+          // Access Modifiers [Private, Internal, Public]
+            //TypeA a = new TypeA();
+
+            //Console.WriteLine(a.x);
+            //Console.WriteLine(a.y);
+            //Console.WriteLine(a.z);
 
 
+            //a.MethodA(); 
+            //access modifiers inside the namespace;
+            // 1. internal:inside thte same project
+            //2. public: everywhere
 
-                #endregion
 
+            /*
+              access modiferes inside the class
+            1- private
+            2- private protected
+            3- protected
+            4- internal 
+            5- internal protected
+            6- public
+
+            access inside the struct
+            1 private 
+            2 internal 
+            public
+              
+              
+              
+              
+             */
+
+
+            #endregion
 
 
 

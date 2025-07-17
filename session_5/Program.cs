@@ -1,4 +1,6 @@
-﻿namespace session_5
+﻿using System;
+
+namespace session_5
 {
     internal class Program
     {
@@ -133,9 +135,9 @@
             //p1.Name = "Tea";
 
             //Console.WriteLine(p1.ToString()); 
-           
 
-          // Access Modifiers [Private, Internal, Public]
+
+            // Access Modifiers [Private, Internal, Public]
             //TypeA a = new TypeA();
 
             //Console.WriteLine(a.x);
@@ -170,7 +172,77 @@
 
 
             #endregion
+            #region V6
 
+            //Person P1 = new Person();
+
+            //P1.Gender = 0;
+            //P1.Gender = Gender.Male;//int => 4 Byte
+            ////int => 4 Byte
+
+            //Console.WriteLine(P1.Gender);
+
+            ////Grades Grade = Grades.A;//default 
+
+            //P1.Branch = Branches.Dokki;
+
+            //Console.WriteLine(P1.Branch);
+
+            //if(Grade == Grades.A)
+            //{
+            //    Console.WriteLine(":) ");
+            //}
+            //else
+            //{
+            //    Console.WriteLine(":( ");
+
+            //}
+
+            //#endregion
+
+            //#region Validation Inputs Enum
+
+            //Person P1 = new Person();
+
+            //bool flag;
+
+            //do
+            //{
+            //    Console.Write("Please Enter the Id of Employee: ");
+            //    flag = int.TryParse(Console.ReadLine(), out P1.Id);
+            //} while (!flag);
+
+            //do
+            //{
+            //    Console.Write("Please Enter the Name of Employee: ");
+
+            //    P1.Name = Console.ReadLine();
+            //} while (P1.Name is null || P1.Name == "");
+
+
+            //do
+            //{
+            //    Console.Write("Please Enter the Gender of Employee: ");
+
+            //    flag = Enum.TryParse(Console.ReadLine(), out P1.Gender);
+            //} while (!flag);
+
+            //do
+            //{
+            //    Console.Write("Please Enter the Branch of Employee: ");
+
+            //    flag = Enum.TryParse(Console.ReadLine(), out P1.Branch);
+            //} while (!flag);
+
+            //Console.Clear();
+
+            //Console.WriteLine(P1.Id);
+            //Console.WriteLine(P1.Name);
+            //Console.WriteLine(P1.Gender);
+            //Console.WriteLine(P1.Branch);
+
+
+            #endregion
 
 
 

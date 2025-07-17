@@ -29,7 +29,7 @@
 
 
             #endregion
-            
+
             #region V2
             //int x = 500;
             //x = null; // Invalid
@@ -40,9 +40,9 @@
 
             //Console.WriteLine(y.HasValue);
             //Console.WriteLine(y.Value); 
-            
 
-            
+
+
             //int x = 10;
             //int? y = x; // Valid, Implicit Casting[Safe]
 
@@ -76,7 +76,17 @@
 
             //x = y.GetValueOrDefault(); 
             #endregion
+            #region V3
+
             
+            //string s = "Hello world";
+
+            //string s = null;
+
+            //Console.WriteLine(s); 
+            
+
+            #endregion
 
 
 

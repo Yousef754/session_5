@@ -16,6 +16,10 @@
             sunday
         }
         #endregion
+
+        #region seasonmonth
+
+        
         [Flags]
         enum seasonsmonth{
 
@@ -36,8 +40,19 @@
 
 
         }
+        #endregion
 
+        #region premission
+        [Flags]
+        enum premission
+        {
+            read=1,
+            write=2,
+            delete=4,
+            execute=8
+        }
 
+        #endregion
 
         static void Main(string[] args)
         {
@@ -59,14 +74,15 @@
             }*/
             #endregion
 
-
+            /*
             #region q2
-            /*   Create an enum called "Season" with the four seasons (Spring, Summer, Autumn, Winter) 
-                as its members. Write a C# program that takes a
-                season name as input from the user and displays the corresponding month range for that
-                season. Note range for seasons ( spring march to may ,
-                summer june to august , autumn September to November , winter December to February)
-            */
+            
+              //Create an enum called "Season" with the four seasons (Spring, Summer, Autumn, Winter) 
+                //as its members. Write a C# program that takes a
+                //season name as input from the user and displays the corresponding month range for that
+                //season. Note range for seasons ( spring march to may ,
+                //summer june to august , autumn September to November , winter December to February)
+            
 
             seasonsmonth spring = seasonsmonth.March;
             spring |= seasonsmonth.April;
@@ -76,7 +92,7 @@
             seasonsmonth summer = seasonsmonth.June;
             summer |= seasonsmonth.July;
             summer |= seasonsmonth.August;
-
+            
 
             seasonsmonth winter = seasonsmonth.December;
             winter |= seasonsmonth.January;
@@ -108,7 +124,30 @@
 
             #endregion
 
+            */
 
+            #region q3
+            /*
+              4- Assign the following Permissions (Read, write, Delete, Execute) in a
+                 form of Enum.
+                   Create Variable from previous Enum to Add and Remove Permission from variable
+                   , check if specific Permission is existed inside variable
+              */
+
+            premission prem = premission.read;
+
+            prem |= premission.write;
+            Console.WriteLine(prem);
+
+            prem&=premission.write;
+            Console.WriteLine(prem);
+
+
+            if (prem.HasFlag(premission.read))
+            { Console.WriteLine("read in inside"); }
+            else { Console.WriteLine("read isn't there");};
+
+            #endregion
 
 
 

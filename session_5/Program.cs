@@ -3,7 +3,7 @@
     internal class Program
     {
 
-        
+        #region weekday
         enum Weekday
         {
 
@@ -15,47 +15,97 @@
             Saturday,
             sunday
         }
+        #endregion
+        [Flags]
+        enum seasonsmonth{
+
+            
+            January = 1,       
+            February = 2,      
+            March = 4,         
+            April = 8,         
+            May = 16,          
+            June = 32,         
+            July = 64,         
+            August = 128,      
+            September = 256,   
+            October = 512,     
+            November = 1024,   
+            December = 2048
 
 
-        
+
+        }
+
+
+
         static void Main(string[] args)
         {
-            
+
             #region q1
             /*
+            
             Create an enum called "WeekDays" with the days of the week 
             (Monday to Sunday) as its members. Then, write a C# program that prints
             out all the days of the week using this enum
-              */
+              
 
-            //Weekday w1=Weekday.Monday;
-            //Weekday w2=Weekday.Tuesday;
-            //Weekday w3=Weekday.Wednesday;
-            //Weekday w4=Weekday.Thursday;
-            //Weekday w5=Weekday.Friday;
-            //Weekday w6=Weekday.Saturday;
-            //Weekday w7 = Weekday.sunday;
-
-
-            //Weekday w8 = (Weekday)1;
-            //Console.WriteLine(w8 );
+           
 
             for(int i = 0; i < 7;i++)
             {
                 Weekday w = (Weekday)i;
                 Console.WriteLine(w);
+            }*/
+            #endregion
+
+
+            #region q2
+            /*   Create an enum called "Season" with the four seasons (Spring, Summer, Autumn, Winter) 
+                as its members. Write a C# program that takes a
+                season name as input from the user and displays the corresponding month range for that
+                season. Note range for seasons ( spring march to may ,
+                summer june to august , autumn September to November , winter December to February)
+            */
+
+            seasonsmonth spring = seasonsmonth.March;
+            spring |= seasonsmonth.April;
+            spring |= seasonsmonth.May;
+
+
+            seasonsmonth summer = seasonsmonth.June;
+            summer |= seasonsmonth.July;
+            summer |= seasonsmonth.August;
+
+
+            seasonsmonth winter = seasonsmonth.December;
+            winter |= seasonsmonth.January;
+            winter |= seasonsmonth.February;
+
+            seasonsmonth autumn = seasonsmonth.September;
+            autumn |= seasonsmonth.October;
+            autumn |= seasonsmonth.November;
+
+            string season=Console.ReadLine();
+            if (season == "summer")
+            {
+                Console.WriteLine(summer);
+            }
+            else if (season == "spring")
+            {
+                Console.WriteLine(spring);
+            }
+            else if (season == "autumn")
+            {
+                Console.WriteLine(autumn);
+            }
+            else if (season == "winter")
+            {
+                Console.WriteLine(winter);
             }
 
 
 
-
-                //Console.WriteLine(w1);
-                //Console.WriteLine(w2);
-                //Console.WriteLine(w3);
-                //Console.WriteLine(w4);
-                //Console.WriteLine(w5);
-                //Console.WriteLine(w6);
-                //Console.WriteLine(w7);
             #endregion
 
 

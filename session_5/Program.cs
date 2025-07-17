@@ -78,17 +78,47 @@
             #endregion
             #region V3
 
-            
+
             //string s = "Hello world";
 
             //string s = null;
 
             //Console.WriteLine(s); 
-            
+
 
             #endregion
 
+            #region V4
+            //region Null Operators
+             //Console.Write("Enter Your Name: ");
+             //string name = Console.ReadLine() ?? "No Name";
 
+            //Console.WriteLine(name);
+
+            //int[] numbers = { 1, 2, 3, 4, 5, 6, 7 };
+            //numbers = null!;
+            //numbers = null;
+            //if(numbers is not null)
+            //{
+            //    for (int i = 0; i < numbers.Length; i++)
+            //    {
+            //        Console.WriteLine(numbers[i]);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine(":(");
+            //}
+
+            //for (int i = 0; i < numbers?.Length; i++)
+            //{
+            //    Console.WriteLine(numbers[i]);
+            //} 
+            
+
+
+
+                #endregion
 
 
 

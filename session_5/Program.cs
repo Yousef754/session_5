@@ -53,6 +53,13 @@
         }
 
         #endregion
+        #region colors
+        enum Colors
+        {
+            red,green, blue
+
+        }
+        #endregion
 
         static void Main(string[] args)
         {
@@ -126,26 +133,46 @@
 
             */
 
-            #region q3
-            /*
-              4- Assign the following Permissions (Read, write, Delete, Execute) in a
-                 form of Enum.
-                   Create Variable from previous Enum to Add and Remove Permission from variable
-                   , check if specific Permission is existed inside variable
-              */
+            /* #region q3
 
-            premission prem = premission.read;
-
-            prem |= premission.write;
-            Console.WriteLine(prem);
-
-            prem&=premission.write;
-            Console.WriteLine(prem);
+               //4- Assign the following Permissions (Read, write, Delete, Execute) in a
+               //   form of Enum.
+               //     Create Variable from previous Enum to Add and Remove Permission from variable
+               //     , check if specific Permission is existed inside variable
 
 
-            if (prem.HasFlag(premission.read))
-            { Console.WriteLine("read in inside"); }
-            else { Console.WriteLine("read isn't there");};
+             premission prem = premission.read;
+
+             prem |= premission.write;
+             Console.WriteLine(prem);
+
+             prem&=premission.write;
+             Console.WriteLine(prem);
+
+
+             if (prem.HasFlag(premission.read))
+             { Console.WriteLine("read in inside"); }
+             else { Console.WriteLine("read isn't there");};
+
+             #endregion*/
+
+            #region q5
+            //5.Create an enum called "Colors" with the basic colors(Red, Green, Blue) as
+            //its members.Write a C# program that takes a color name as input from the
+            //user and displays a message indicating whether the input color is a
+            //primary color or not.
+
+            Colors firstcolor= Colors.red;
+            Colors seccolor= Colors.blue;
+            Colors thirdcolor= Colors.green;
+
+            string color=Console.ReadLine();
+
+            if (color=="red"||color=="blue" || color == "green")
+            {
+                Console.WriteLine("this is primary key");
+            }
+            else { Console.WriteLine("color is not from primary color");};
 
             #endregion
 
@@ -158,8 +185,6 @@
 
 
 
-
-
         }
-    }
+}
 }
